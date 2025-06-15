@@ -37,8 +37,8 @@ const HeroSection = () => {
     return () => clearInterval(timer);
   }, [slides.length]);
 
-  const scrollToAbout = () => {
-    const element = document.querySelector('#about');
+  const scrollToWork = () => {
+    const element = document.querySelector('#work');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
@@ -131,7 +131,7 @@ const HeroSection = () => {
                     {slide.description}
                   </p>
                   <button
-                    onClick={scrollToAbout}
+                    onClick={scrollToWork}
                     className="bg-vv-orange hover:bg-vv-orange-dark text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
                   >
                     {slide.ctaText}
@@ -159,7 +159,7 @@ const HeroSection = () => {
       {/* Scroll Down Arrow */}
       <div className="absolute bottom-8 right-8 z-30">
         <button
-          onClick={scrollToAbout}
+          onClick={scrollToWork}
           className="text-white hover:text-vv-orange transition-colors duration-300 animate-bounce-slow"
         >
           <ArrowDown size={32} />
