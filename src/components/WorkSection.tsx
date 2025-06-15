@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Badge } from '@/components/ui/badge';
@@ -67,6 +68,26 @@ const WorkSection = () => {
       thumbnail: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=500",
       client: "PS Endeavours",
       description: "Complete startup identity and launch visuals for PS Endeavours, building a strong brand foundation for their new venture.",
+      featured: false,
+      logo: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=300&h=200&fit=crop"
+    },
+    {
+      id: 7,
+      title: "Innovate Inc.",
+      category: "Web Design",
+      thumbnail: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=500",
+      client: "Innovate Inc.",
+      description: "A modern and responsive website for a forward-thinking tech company.",
+      featured: true,
+      logo: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=300&h=200&fit=crop"
+    },
+    {
+      id: 8,
+      title: "Marketing Masterminds",
+      category: "Digital Marketing",
+      thumbnail: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=500",
+      client: "Marketing Masterminds",
+      description: "A comprehensive digital marketing campaign to boost online presence and lead generation.",
       featured: false,
       logo: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=300&h=200&fit=crop"
     }
