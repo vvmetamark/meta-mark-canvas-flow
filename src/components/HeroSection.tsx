@@ -11,7 +11,7 @@ const HeroSection = () => {
       subtitle: "That Converts",
       description: "Strategic digital campaigns that drive engagement, boost visibility, and deliver measurable results.",
       ctaText: "See Our Campaigns",
-      bgImage: "/lovable-uploads/dbf64354-0941-40ab-a3e9-3d0e507ce0de.png",
+      bgImage: "/lovable-uploads/9b8a2c68-ad80-47be-82f9-1973e62097c8.png",
       ctaAction: "work"
     },
     {
@@ -19,7 +19,7 @@ const HeroSection = () => {
       subtitle: "That Inspires",
       description: "Innovative design solutions that capture attention and create lasting impressions for your brand.",
       ctaText: "View Portfolio",
-      bgImage: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&h=1080&fit=crop",
+      bgImage: "/lovable-uploads/ecca6760-aab2-4cab-bb05-33540c04d774.png",
       ctaAction: "work"
     },
     {
@@ -27,7 +27,7 @@ const HeroSection = () => {
       subtitle: "That Resonates",
       description: "Comprehensive brand strategies that connect with your audience and build meaningful relationships.",
       ctaText: "Learn More",
-      bgImage: "/lovable-uploads/9b8a2c68-ad80-47be-82f9-1973e62097c8.png",
+      bgImage: "/lovable-uploads/dbf64354-0941-40ab-a3e9-3d0e507ce0de.png",
       ctaAction: "about"
     }
   ];
