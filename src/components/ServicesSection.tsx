@@ -1,5 +1,6 @@
 
 import { Palette, Monitor, Camera } from 'lucide-react';
+import ClientLogos from './ClientLogos';
 
 const ServicesSection = () => {
   const services = [
@@ -87,6 +88,7 @@ const ServicesSection = () => {
             </div>
           ))}
         </div>
+        <ClientLogos />
       </div>
     </div>
   );
