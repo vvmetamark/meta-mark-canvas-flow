@@ -1,12 +1,66 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useState, useEffect } from 'react';
+import Header from '../components/Header';
+import HeroSection from '../components/HeroSection';
+import VideoSection from '../components/VideoSection';
+import ServicesSection from '../components/ServicesSection';
+import WorkSection from '../components/WorkSection';
+import TestimonialsSection from '../components/TestimonialsSection';
+import ContactSection from '../components/ContactSection';
 
 const Index = () => {
+  const [activeSection, setActiveSection] = useState('home');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['home', 'about', 'services', 'work', 'testimonials', 'contact'];
+      const scrollY = window.scrollY;
+      
+      sections.forEach((section) => {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          const isVisible = rect.top <= 100 && rect.bottom >= 100;
+          if (isVisible) {
+            setActiveSection(section);
+          }
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-vv-white">
+      <Header activeSection={activeSection} />
+      
+      <main>
+        <section id="home">
+          <HeroSection />
+        </section>
+        
+        <section id="about">
+          <VideoSection />
+        </section>
+        
+        <section id="services">
+          <ServicesSection />
+        </section>
+        
+        <section id="work">
+          <WorkSection />
+        </section>
+        
+        <section id="testimonials">
+          <TestimonialsSection />
+        </section>
+        
+        <section id="contact">
+          <ContactSection />
+        </section>
+      </main>
     </div>
   );
 };
