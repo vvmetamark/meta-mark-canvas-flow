@@ -11,21 +11,21 @@ const HeroSection = () => {
       subtitle: "That Converts",
       description: "Strategic digital campaigns that drive engagement, boost visibility, and deliver measurable results.",
       ctaText: "See Our Campaigns",
-      bgGradient: "from-blue-400 via-purple-500 to-teal-400"
+      bgImage: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=1920&h=1080&fit=crop"
     },
     {
       title: "Creative Design",
       subtitle: "That Inspires",
       description: "Innovative design solutions that capture attention and create lasting impressions for your brand.",
       ctaText: "View Portfolio",
-      bgGradient: "from-pink-400 via-red-500 to-orange-400"
+      bgImage: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&h=1080&fit=crop"
     },
     {
       title: "Brand Strategy",
       subtitle: "That Resonates",
       description: "Comprehensive brand strategies that connect with your audience and build meaningful relationships.",
       ctaText: "Learn More",
-      bgGradient: "from-green-400 via-blue-500 to-purple-400"
+      bgImage: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1920&h=1080&fit=crop"
     }
   ];
 
@@ -45,9 +45,25 @@ const HeroSection = () => {
   };
 
   return (
-    <div className={`relative h-screen overflow-hidden bg-gradient-to-br transition-all duration-1000 ${slides[currentSlide].bgGradient}`}>
+    <div className="relative h-screen overflow-hidden">
+      {/* Background Images */}
+      {slides.map((slide, index) => (
+        <div
+          key={index}
+          className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
+            index === currentSlide ? 'opacity-100' : 'opacity-0'
+          }`}
+          style={{
+            backgroundImage: `url(${slide.bgImage})`,
+          }}
+        />
+      ))}
+      
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/50 z-10" />
+
       {/* Floating Icons */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden z-20">
         {/* Heart Icon */}
         <div className="absolute top-20 left-1/4 w-12 h-12 bg-red-500 rounded-full flex items-center justify-center animate-bounce-slow">
           <span className="text-white text-xl">♥</span>
@@ -80,20 +96,20 @@ const HeroSection = () => {
       {/* Navigation Arrows */}
       <button 
         onClick={() => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)}
-        className="absolute left-8 top-1/2 transform -translate-y-1/2 z-20 text-white hover:text-vv-orange transition-colors duration-300"
+        className="absolute left-8 top-1/2 transform -translate-y-1/2 z-30 text-white hover:text-vv-orange transition-colors duration-300"
       >
         <ArrowDown size={32} className="rotate-90" />
       </button>
       
       <button 
         onClick={() => setCurrentSlide((prev) => (prev + 1) % slides.length)}
-        className="absolute right-8 top-1/2 transform -translate-y-1/2 z-20 text-white hover:text-vv-orange transition-colors duration-300"
+        className="absolute right-8 top-1/2 transform -translate-y-1/2 z-30 text-white hover:text-vv-orange transition-colors duration-300"
       >
         <ArrowDown size={32} className="-rotate-90" />
       </button>
 
       {/* Main Content */}
-      <div className="relative z-10 h-full flex items-center">
+      <div className="relative z-20 h-full flex items-center">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
@@ -154,7 +170,7 @@ const HeroSection = () => {
       </div>
 
       {/* Slide Indicators */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-3">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 flex space-x-3">
         {slides.map((_, index) => (
           <button
             key={index}
@@ -167,7 +183,7 @@ const HeroSection = () => {
       </div>
 
       {/* Scroll Down Arrow */}
-      <div className="absolute bottom-8 right-8 z-20">
+      <div className="absolute bottom-8 right-8 z-30">
         <button
           onClick={scrollToAbout}
           className="text-white hover:text-vv-orange transition-colors duration-300 animate-bounce-slow"
