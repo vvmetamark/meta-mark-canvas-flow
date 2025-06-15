@@ -118,7 +118,7 @@ const VideoSection = () => {
             {/* Right Column */}
             <div className="space-y-8">
               {/* Our Vision */}
-              <div>
+              <div className="bg-vv-vision-bg p-8 rounded-lg">
                 <h4 className="text-xl font-bold text-vv-navy mb-4">Our Vision</h4>
                 <p className="text-vv-navy/80 leading-relaxed">
                   To become a trusted creative partner for individuals, institutions, and enterprises by delivering accessible, innovative, and impactful branding and digital marketing services.
@@ -126,7 +126,7 @@ const VideoSection = () => {
               </div>
 
               {/* Our Mission */}
-              <div>
+              <div className="bg-vv-mission-bg p-8 rounded-lg">
                 <h4 className="text-xl font-bold text-vv-navy mb-4">Our Mission</h4>
                 <ul className="space-y-3 text-vv-navy/80">
                   <li className="flex items-start">

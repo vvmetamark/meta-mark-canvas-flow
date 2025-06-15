@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -28,6 +29,8 @@ export default {
 				'vv-orange-dark': '#FB8500',
 				'vv-navy': '#023047',
 				'vv-white': '#FFFFFF',
+				'vv-vision-bg': '#FEF9F3',
+				'vv-mission-bg': '#F0FAFC',
 				
 				// Keep existing shadcn colors for components
 				border: 'hsl(var(--border))',
