@@ -13,11 +13,11 @@ const ClientLogos = () => {
   const LogoList = ({ 'aria-hidden': ariaHidden }: { 'aria-hidden'?: boolean }) => (
     <ul className="flex items-center justify-center flex-shrink-0 animate-scroll-left group-hover:[animation-play-state:paused]" aria-hidden={ariaHidden}>
       {clientLogos.map((logo, index) => (
-        <li key={index} className="w-48 mx-8 flex items-center justify-center">
+        <li key={index} className="w-64 mx-12 flex items-center justify-center">
           <img
             src={logo}
             alt="Client logo"
-            className="max-h-12 w-auto object-contain filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+            className="max-h-24 w-auto object-contain filter grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
           />
         </li>
       ))}
