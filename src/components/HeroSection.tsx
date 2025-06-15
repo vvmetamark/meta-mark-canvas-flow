@@ -140,24 +140,18 @@ const HeroSection = () => {
               ))}
             </div>
 
-            {/* Right Content - Phone with Person */}
+            {/* Right Content - Phone Frame Only */}
             <div className="hidden lg:block relative">
               <div className="relative mx-auto">
                 {/* Phone Frame */}
                 <div className="relative w-80 h-96 bg-black rounded-3xl p-2 shadow-2xl transform rotate-12">
                   <div className="w-full h-full bg-white rounded-2xl overflow-hidden relative">
-                    {/* Person with Megaphone */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <img
-                        src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?w=400&h=500&fit=crop&crop=face"
-                        alt="Person with megaphone"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
+                    {/* Empty phone screen with subtle gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200"></div>
                     
-                    {/* Megaphone overlay effect */}
+                    {/* Megaphone icon in center */}
                     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                      <div className="w-16 h-16 bg-gray-700 rounded-full flex items-center justify-center shadow-lg">
+                      <div className="w-16 h-16 bg-vv-orange rounded-full flex items-center justify-center shadow-lg">
                         <span className="text-white text-2xl">📢</span>
                       </div>
                     </div>
