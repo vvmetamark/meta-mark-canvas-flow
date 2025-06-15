@@ -1,4 +1,3 @@
-
 import { MapPin, Phone, Mail, Facebook, Instagram, Linkedin, Youtube, MessageCircle } from 'lucide-react';
 
 const SocialLink = ({ href, label, children }: { href: string; label: string; children: React.ReactNode }) => (
@@ -25,7 +24,6 @@ const ContactInfo = () => (
           <div>
             <h4 className="font-bold text-vv-navy text-lg mb-2">Bangalore Office</h4>
             <p className="text-vv-navy/70 text-sm leading-relaxed">
-              VV METAMARK PRIVATE LIMITED<br />
               Building No. 22, 2nd Floor, 5th Cross Road<br />
               N S Palya, BTM 2nd Stage<br />
               Bengaluru, Karnataka 560076
