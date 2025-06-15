@@ -33,8 +33,8 @@ serve(async (req) => {
     }
     
     // NOTE: For production, you must use a domain you have verified in Resend.
-    // I've updated this to use your company's domain. Please ensure you have verified 'vvmetamark.com' in your Resend account.
-    const fromAddress = 'VV Metamark <noreply@vvmetamark.com>';
+    // The 'onboarding@resend.dev' address is for development and testing.
+    const fromAddress = 'VV Metamark <onboarding@resend.dev>';
 
     // 1. Send notification email to the company
     await resend.emails.send({
