@@ -30,7 +30,7 @@ const ContactSection = () => {
     },
   });
 
-  const { mutate, isPending } = useMutation({
+  const { mutateAsync, isPending } = useMutation({
     mutationFn: async (values: z.infer<typeof formSchema>) => {
       const { data, error } = await supabase.functions.invoke('contact-form', {
         body: values,
@@ -54,7 +54,7 @@ const ContactSection = () => {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    toast.promise(mutate(values), {
+    toast.promise(mutateAsync(values), {
       loading: 'Sending your message...',
       success: 'Message sent! We will get back to you soon.',
       error: (err) => `Failed to send: ${err.message}`,
