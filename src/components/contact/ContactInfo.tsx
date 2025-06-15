@@ -25,9 +25,9 @@ const ContactInfo = () => (
           <div>
             <h4 className="font-bold text-vv-navy text-lg mb-2">Bangalore Office</h4>
             <p className="text-vv-navy/70 text-sm leading-relaxed">
-              123 Creative Street<br />
-              Design District<br />
-              Bangalore, Karnataka 560001
+              #123, Sample Street<br />
+              Indiranagar<br />
+              Bengaluru, Karnataka 560038
             </p>
           </div>
         </div>
