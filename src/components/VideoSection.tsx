@@ -1,4 +1,5 @@
-import { ArrowDown } from 'lucide-react';
+
+import { ArrowDown, Play } from 'lucide-react';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 
 const VideoSection = () => {
@@ -13,22 +14,44 @@ const VideoSection = () => {
     <>
       {/* Hero Video Section */}
       <div className="relative h-screen bg-gradient-to-br from-vv-navy/90 to-vv-blue/90 overflow-hidden">
-        {/* Background Video */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          <iframe
-            src="https://player.vimeo.com/video/1093364354?background=1&autoplay=1&loop=1&muted=1&byline=0&title=0"
-            className="absolute top-1/2 left-1/2 w-auto min-w-full min-h-full max-w-none -translate-x-1/2 -translate-y-1/2"
-            allow="autoplay; muted"
-            title="VV Metamark Background Video"
-          ></iframe>
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src="/lovable-uploads/ded22791-3e09-4796-bb83-a6a66a798438.png"
+            alt="VV Metamark Team"
+            className="w-full h-full object-cover"
+          />
           <div className="absolute inset-0 bg-vv-navy/70"></div>
         </div>
 
         {/* Content */}
-        <div className="relative z-10 h-full flex items-center justify-center">
+        <div className="relative z-10 h-full flex items-center">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+            {/* Play Button */}
+            <div className="mb-8">
+              <Dialog>
+                <DialogTrigger asChild>
+                  <button className="bg-vv-orange hover:bg-vv-orange-dark text-white p-6 rounded-full transition-all duration-300 transform hover:scale-110 mx-auto">
+                    <Play size={48} />
+                  </button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-4xl p-0 bg-transparent border-0">
+                  <div className="aspect-video">
+                    <iframe
+                      src="https://player.vimeo.com/video/1093364354?autoplay=1&title=0&byline=0&portrait=0"
+                      width="100%"
+                      height="100%"
+                      allow="autoplay; fullscreen; picture-in-picture"
+                      allowFullScreen
+                      title="VV Metamark Video"
+                    ></iframe>
+                  </div>
+                </DialogContent>
+              </Dialog>
+            </div>
+
             {/* Main Heading */}
-            <h1 className="text-4xl md:text-6xl font-bold my-8">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
               We Are <span className="text-vv-orange">VV Metamark</span>
             </h1>
 
