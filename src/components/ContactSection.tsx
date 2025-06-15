@@ -1,4 +1,5 @@
-import { MapPin, Phone, Mail, Send } from 'lucide-react';
+
+import { MapPin, Phone, Mail, Send, Facebook, Instagram, Linkedin, Youtube, MessageCircle } from 'lucide-react';
 
 const ContactSection = () => {
   return (
@@ -82,14 +83,20 @@ const ContactSection = () => {
               <div>
                 <h4 className="font-bold text-vv-navy mb-3">Follow Us</h4>
                 <div className="flex gap-3">
-                  <div className="bg-vv-orange text-white p-2 rounded-full hover:bg-vv-orange-dark transition-colors cursor-pointer">
-                    <span className="text-sm font-bold">f</span>
+                  <div className="bg-vv-orange text-white p-3 rounded-full hover:bg-vv-orange-dark transition-colors cursor-pointer">
+                    <Facebook size={18} />
                   </div>
-                  <div className="bg-vv-orange text-white p-2 rounded-full hover:bg-vv-orange-dark transition-colors cursor-pointer">
-                    <span className="text-sm font-bold">ig</span>
+                  <div className="bg-vv-orange text-white p-3 rounded-full hover:bg-vv-orange-dark transition-colors cursor-pointer">
+                    <Instagram size={18} />
                   </div>
-                  <div className="bg-vv-orange text-white p-2 rounded-full hover:bg-vv-orange-dark transition-colors cursor-pointer">
-                    <span className="text-sm font-bold">in</span>
+                  <div className="bg-vv-orange text-white p-3 rounded-full hover:bg-vv-orange-dark transition-colors cursor-pointer">
+                    <Linkedin size={18} />
+                  </div>
+                  <div className="bg-vv-orange text-white p-3 rounded-full hover:bg-vv-orange-dark transition-colors cursor-pointer">
+                    <Youtube size={18} />
+                  </div>
+                  <div className="bg-vv-orange text-white p-3 rounded-full hover:bg-vv-orange-dark transition-colors cursor-pointer">
+                    <MessageCircle size={18} />
                   </div>
                 </div>
               </div>
