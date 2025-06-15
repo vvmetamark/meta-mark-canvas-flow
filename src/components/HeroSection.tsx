@@ -11,21 +11,24 @@ const HeroSection = () => {
       subtitle: "That Converts",
       description: "Strategic digital campaigns that drive engagement, boost visibility, and deliver measurable results.",
       ctaText: "See Our Campaigns",
-      bgImage: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=1920&h=1080&fit=crop"
+      bgImage: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=1920&h=1080&fit=crop",
+      ctaAction: "work"
     },
     {
       title: "Creative Design",
       subtitle: "That Inspires",
       description: "Innovative design solutions that capture attention and create lasting impressions for your brand.",
       ctaText: "View Portfolio",
-      bgImage: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&h=1080&fit=crop"
+      bgImage: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&h=1080&fit=crop",
+      ctaAction: "work"
     },
     {
       title: "Brand Strategy",
       subtitle: "That Resonates",
       description: "Comprehensive brand strategies that connect with your audience and build meaningful relationships.",
       ctaText: "Learn More",
-      bgImage: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1920&h=1080&fit=crop"
+      bgImage: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1920&h=1080&fit=crop",
+      ctaAction: "about"
     }
   ];
 
@@ -41,6 +44,21 @@ const HeroSection = () => {
     const element = document.querySelector('#work');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToAbout = () => {
+    const element = document.querySelector('#about');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleCtaClick = (action: string) => {
+    if (action === 'about') {
+      scrollToAbout();
+    } else {
+      scrollToWork();
     }
   };
 
@@ -131,7 +149,7 @@ const HeroSection = () => {
                     {slide.description}
                   </p>
                   <button
-                    onClick={scrollToWork}
+                    onClick={() => handleCtaClick(slide.ctaAction)}
                     className="bg-vv-orange hover:bg-vv-orange-dark text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
                   >
                     {slide.ctaText}
