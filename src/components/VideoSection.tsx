@@ -3,8 +3,8 @@ import { ArrowDown, Play } from 'lucide-react';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 
 const VideoSection = () => {
-  const scrollToServices = () => {
-    const element = document.querySelector('#services');
+  const scrollToAboutVVMetamark = () => {
+    const element = document.querySelector('#about-vv-metamark');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
@@ -81,7 +81,7 @@ const VideoSection = () => {
 
             {/* Scroll Down Arrow */}
             <button
-              onClick={scrollToServices}
+              onClick={scrollToAboutVVMetamark}
               className="text-white hover:text-vv-orange transition-colors duration-300 animate-bounce-slow"
             >
               <ArrowDown size={32} />
@@ -91,7 +91,7 @@ const VideoSection = () => {
       </div>
 
       {/* About Section */}
-      <div className="py-20 bg-white">
+      <div id="about-vv-metamark" className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">

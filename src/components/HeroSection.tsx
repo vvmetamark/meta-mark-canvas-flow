@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { ArrowDown } from 'lucide-react';
 
@@ -161,23 +160,24 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Slide Indicators */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 flex space-x-3">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === currentSlide ? 'bg-vv-orange' : 'bg-white/50'
-            }`}
-          />
-        ))}
-      </div>
+      {/* Slide Indicators and Scroll Down Arrow */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 flex flex-col items-center space-y-4">
+        {/* Slide Indicators */}
+        <div className="flex space-x-3">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentSlide ? 'bg-vv-orange' : 'bg-white/50'
+              }`}
+            />
+          ))}
+        </div>
 
-      {/* Scroll Down Arrow */}
-      <div className="absolute bottom-8 right-8 z-30">
+        {/* Scroll Down Arrow */}
         <button
-          onClick={scrollToWork}
+          onClick={scrollToAbout}
           className="text-white hover:text-vv-orange transition-colors duration-300 animate-bounce-slow"
         >
           <ArrowDown size={32} />
