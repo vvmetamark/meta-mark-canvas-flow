@@ -7,6 +7,7 @@ import ServicesSection from '../components/ServicesSection';
 import WorkSection from '../components/WorkSection';
 import TestimonialsSection from '../components/TestimonialsSection';
 import ContactSection from '../components/ContactSection';
+import { Toaster } from "@/components/ui/sonner";
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -61,6 +62,7 @@ const Index = () => {
           <ContactSection />
         </section>
       </main>
+      <Toaster richColors />
     </div>
   );
 };

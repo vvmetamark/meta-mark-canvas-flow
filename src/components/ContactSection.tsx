@@ -1,6 +1,67 @@
-import { MapPin, Phone, Mail, Send, Facebook, Instagram, Linkedin, Youtube, MessageCircle } from 'lucide-react';
+
+import { MapPin, Phone, Mail, Facebook, Instagram, Linkedin, Youtube, MessageCircle, Loader2 } from 'lucide-react';
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+import { useMutation } from '@tanstack/react-query';
+import { toast } from "sonner";
+
+import { Button } from "@/components/ui/button";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { supabase } from '@/lib/supabase';
+
+const formSchema = z.object({
+  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
+  email: z.string().email({ message: "Please enter a valid email address." }),
+  subject: z.string().min(5, { message: "Subject must be at least 5 characters." }),
+  message: z.string().min(10, { message: "Message must be at least 10 characters." }),
+});
 
 const ContactSection = () => {
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    },
+  });
+
+  const { mutate, isPending } = useMutation({
+    mutationFn: async (values: z.infer<typeof formSchema>) => {
+      const { data, error } = await supabase.functions.invoke('contact-form', {
+        body: values,
+      });
+
+      if (error) {
+        console.error('Supabase function error:', error);
+        throw new Error(`Function Error: ${error.message}`);
+      }
+      
+      if (data.error) {
+         console.error('API Error:', data.error);
+         throw new Error(`API Error: ${data.error}`);
+      }
+
+      return data;
+    },
+    onSuccess: () => {
+      form.reset();
+    }
+  });
+
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    toast.promise(mutate(values), {
+      loading: 'Sending your message...',
+      success: 'Message sent! We will get back to you soon.',
+      error: (err) => `Failed to send: ${err.message}`,
+    });
+  }
+
+
   return (
     <div className="bg-vv-orange">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -118,66 +179,103 @@ const ContactSection = () => {
               Send Message
             </h3>
             
-            <form className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="name" className="block text-vv-navy font-medium mb-2 text-sm">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-vv-orange focus:border-transparent text-sm"
-                    placeholder="Your Name"
-                    required
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-4">
+                  <FormField
+                    control={form.control}
+                    name="name"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="block text-vv-navy font-medium mb-2 text-sm">Name</FormLabel>
+                        <FormControl>
+                          <Input
+                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-vv-orange focus:border-transparent text-sm"
+                            placeholder="Your Name"
+                            {...field}
+                            disabled={isPending}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="block text-vv-navy font-medium mb-2 text-sm">Email</FormLabel>
+                        <FormControl>
+                          <Input
+                            type="email"
+                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-vv-orange focus:border-transparent text-sm"
+                            placeholder="Your Email"
+                            {...field}
+                            disabled={isPending}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
                   />
                 </div>
-                <div>
-                  <label htmlFor="email" className="block text-vv-navy font-medium mb-2 text-sm">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-vv-orange focus:border-transparent text-sm"
-                    placeholder="Your Email"
-                    required
-                  />
-                </div>
-              </div>
-              
-              <div>
-                <label htmlFor="subject" className="block text-vv-navy font-medium mb-2 text-sm">
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-vv-orange focus:border-transparent text-sm"
-                  placeholder="Subject"
+                
+                <FormField
+                  control={form.control}
+                  name="subject"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="block text-vv-navy font-medium mb-2 text-sm">Subject</FormLabel>
+                      <FormControl>
+                        <Input
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-vv-orange focus:border-transparent text-sm"
+                          placeholder="Subject"
+                          {...field}
+                          disabled={isPending}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
                 />
-              </div>
-              
-              <div>
-                <label htmlFor="message" className="block text-vv-navy font-medium mb-2 text-sm">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  rows={6}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-vv-orange focus:border-transparent resize-none text-sm"
-                  placeholder="Your Message"
-                  required
+                
+                <FormField
+                  control={form.control}
+                  name="message"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="block text-vv-navy font-medium mb-2 text-sm">Message</FormLabel>
+                      <FormControl>
+                        <Textarea
+                          rows={6}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-vv-orange focus:border-transparent resize-none text-sm"
+                          placeholder="Your Message"
+                          {...field}
+                          disabled={isPending}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
                 />
-              </div>
-              
-              <button
-                type="submit"
-                className="w-full bg-vv-orange text-white py-3 rounded-lg font-semibold hover:bg-vv-orange-dark transition-colors duration-300 flex items-center justify-center gap-2"
-              >
-                Send Message
-              </button>
-            </form>
+                
+                <Button
+                  type="submit"
+                  className="w-full bg-vv-orange text-white py-3 rounded-lg font-semibold hover:bg-vv-orange-dark transition-colors duration-300 flex items-center justify-center gap-2"
+                  disabled={isPending}
+                >
+                  {isPending ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    'Send Message'
+                  )}
+                </Button>
+              </form>
+            </Form>
           </div>
         </div>
 
