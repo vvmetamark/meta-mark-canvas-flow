@@ -1,4 +1,3 @@
-
 import { Palette, Monitor, Camera } from 'lucide-react';
 
 const ServicesSection = () => {
@@ -50,7 +49,7 @@ const ServicesSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-vv-navy mb-4">
-            WHAT WE DO
+            WHAT <span style={{ color: '#ffb703' }}>WE DO</span>
           </h2>
           <div className="w-24 h-1 bg-vv-orange mx-auto mb-6"></div>
           <p className="text-lg text-vv-navy/70 max-w-2xl mx-auto">
