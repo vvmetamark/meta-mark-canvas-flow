@@ -1,4 +1,3 @@
-
 import { MapPin, Phone, Mail, Send } from 'lucide-react';
 
 const ContactSection = () => {
@@ -7,7 +6,7 @@ const ContactSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-vv-navy mb-4">
-            JUST HOLLER.
+            <span className="text-white">JUST</span> HOLLER.
           </h2>
           <h3 className="text-2xl md:text-3xl font-semibold text-vv-navy mb-8">
             WE'RE RIGHT HERE!
