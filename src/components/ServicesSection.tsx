@@ -1,3 +1,4 @@
+
 import { Palette, Monitor, Camera } from 'lucide-react';
 
 const ServicesSection = () => {
@@ -64,10 +65,10 @@ const ServicesSection = () => {
               className="text-center group animate-fade-in"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              {/* Continuously Rotating Circle Icon */}
+              {/* Only Circle Rotating, Icon Stationary */}
               <div className="relative mx-auto mb-6 w-32 h-32 flex items-center justify-center">
                 <div className="absolute inset-0 border-2 border-dashed border-vv-orange rounded-full animate-spin" style={{ animationDuration: '10s' }}></div>
-                <div className="bg-vv-white p-6 rounded-full shadow-lg group-hover:shadow-xl transition-shadow duration-300 animate-spin" style={{ animationDuration: '15s', animationDirection: 'reverse' }}>
+                <div className="bg-vv-white p-6 rounded-full shadow-lg group-hover:shadow-xl transition-shadow duration-300">
                   <service.icon size={48} className="text-vv-orange" />
                 </div>
               </div>
