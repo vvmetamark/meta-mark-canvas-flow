@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Badge } from '@/components/ui/badge';
 import { X } from 'lucide-react';
+import { ScrollArea } from '@/components/ui/scroll-area';
 
 const WorkSection = () => {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -211,9 +212,11 @@ const WorkSection = () => {
 
                 <div className="flex items-start gap-2 mb-6">
                   <span className="text-pink-500 text-xl">🚀</span>
-                  <p className="text-gray-600 leading-relaxed whitespace-pre-line">
-                    {selectedProject.description}
-                  </p>
+                  <ScrollArea className="h-48 w-full">
+                    <p className="text-gray-600 leading-relaxed whitespace-pre-line pr-6">
+                      {selectedProject.description}
+                    </p>
+                  </ScrollArea>
                 </div>
 
                 <div className="pt-4 border-t border-gray-100">
