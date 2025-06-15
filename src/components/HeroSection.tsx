@@ -1,30 +1,30 @@
 
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, ArrowDown } from 'lucide-react';
+import { ArrowDown } from 'lucide-react';
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
     {
-      title: "Creative Excellence",
-      subtitle: "Transforming Ideas into",
-      highlight: "Visual Stories",
-      description: "We craft compelling brand narratives that resonate with audiences and drive meaningful connections.",
+      title: "Digital Marketing",
+      subtitle: "That Converts",
+      description: "We create data-driven digital marketing strategies that deliver real results. From social media campaigns to SEO optimization, we help your business grow online.",
+      ctaText: "Get Started",
       bgImage: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7"
     },
     {
-      title: "Digital Innovation",
-      subtitle: "Building Tomorrow's",
-      highlight: "Digital Experiences",
-      description: "From web development to digital marketing, we create cutting-edge solutions that propel your business forward.",
+      title: "Creative Design",
+      subtitle: "That Inspires",
+      description: "Our creative team brings your brand vision to life with stunning designs that capture attention and drive engagement across all platforms.",
+      ctaText: "View Portfolio",
       bgImage: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
     },
     {
-      title: "Brand Identity",
-      subtitle: "Crafting Distinctive",
-      highlight: "Brand Personalities",
-      description: "Every brand has a unique story. We help you tell yours through compelling design and strategic thinking.",
+      title: "Brand Strategy",
+      subtitle: "That Resonates",
+      description: "We develop comprehensive brand strategies that connect with your target audience and build lasting relationships.",
+      ctaText: "Learn More",
       bgImage: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
     }
   ];
@@ -37,86 +37,76 @@ const HeroSection = () => {
     return () => clearInterval(timer);
   }, [slides.length]);
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
-
-  const scrollToWork = () => {
-    const element = document.querySelector('#work');
+  const scrollToAbout = () => {
+    const element = document.querySelector('#about');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   return (
-    <div className="relative h-screen overflow-hidden">
-      {/* Background Images */}
-      {slides.map((slide, index) => (
-        <div
-          key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === currentSlide ? 'opacity-100' : 'opacity-0'
-          }`}
-        >
-          <div
-            className="w-full h-full bg-cover bg-center"
-            style={{ backgroundImage: `url(${slide.bgImage})` }}
-          />
-          <div className="absolute inset-0 bg-black/40" />
-        </div>
-      ))}
+    <div className="relative h-screen overflow-hidden bg-gradient-to-br from-vv-blue to-vv-navy">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+        }}></div>
+      </div>
 
-      {/* Content */}
+      {/* Main Content */}
       <div className="relative z-10 h-full flex items-center">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl">
-            {slides.map((slide, index) => (
-              <div
-                key={index}
-                className={`transition-all duration-1000 ${
-                  index === currentSlide 
-                    ? 'opacity-100 translate-x-0' 
-                    : 'opacity-0 translate-x-8'
-                }`}
-                style={{ display: index === currentSlide ? 'block' : 'none' }}
-              >
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
-                  <span className="text-vv-white block mb-2">{slide.title}</span>
-                  <span className="text-vv-white block mb-2">{slide.subtitle}</span>
-                  <span className="text-vv-orange">{slide.highlight}</span>
-                </h1>
-                <p className="text-lg md:text-xl text-vv-white/90 mb-8 max-w-2xl leading-relaxed">
-                  {slide.description}
-                </p>
-                <button
-                  onClick={scrollToWork}
-                  className="bg-vv-orange hover:bg-vv-orange-dark text-vv-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div className="text-white">
+              {slides.map((slide, index) => (
+                <div
+                  key={index}
+                  className={`transition-all duration-1000 ${
+                    index === currentSlide 
+                      ? 'opacity-100 translate-x-0' 
+                      : 'opacity-0 translate-x-8 absolute'
+                  }`}
                 >
-                  Explore Our Work
-                </button>
+                  <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4">
+                    <span className="block">{slide.title}</span>
+                    <span className="text-vv-orange">{slide.subtitle}</span>
+                  </h1>
+                  <p className="text-xl text-white/90 mb-8 max-w-lg leading-relaxed">
+                    {slide.description}
+                  </p>
+                  <button
+                    onClick={scrollToAbout}
+                    className="bg-vv-orange hover:bg-vv-orange-dark text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
+                  >
+                    {slide.ctaText}
+                  </button>
+                </div>
+              ))}
+            </div>
+
+            {/* Right Content - Image/Graphic */}
+            <div className="hidden lg:block">
+              <div className="relative">
+                <div className="w-96 h-96 mx-auto">
+                  <img
+                    src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7"
+                    alt="Digital Marketing"
+                    className="w-full h-full object-cover rounded-full shadow-2xl"
+                  />
+                  {/* Floating Elements */}
+                  <div className="absolute -top-4 -right-4 bg-vv-orange text-white p-4 rounded-lg shadow-lg animate-bounce-slow">
+                    <span className="text-sm font-semibold">SEO</span>
+                  </div>
+                  <div className="absolute -bottom-4 -left-4 bg-white text-vv-navy p-4 rounded-lg shadow-lg animate-bounce-slow" style={{ animationDelay: '1s' }}>
+                    <span className="text-sm font-semibold">Social Media</span>
+                  </div>
+                </div>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </div>
-
-      {/* Navigation Controls */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-vv-white/20 hover:bg-vv-white/30 text-vv-white p-3 rounded-full transition-all duration-300"
-      >
-        <ChevronLeft size={24} />
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-vv-white/20 hover:bg-vv-white/30 text-vv-white p-3 rounded-full transition-all duration-300"
-      >
-        <ChevronRight size={24} />
-      </button>
 
       {/* Slide Indicators */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-3">
@@ -125,7 +115,7 @@ const HeroSection = () => {
             key={index}
             onClick={() => setCurrentSlide(index)}
             className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === currentSlide ? 'bg-vv-orange' : 'bg-vv-white/50'
+              index === currentSlide ? 'bg-vv-orange' : 'bg-white/50'
             }`}
           />
         ))}
@@ -134,8 +124,8 @@ const HeroSection = () => {
       {/* Scroll Down Arrow */}
       <div className="absolute bottom-8 right-8 z-20">
         <button
-          onClick={() => document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' })}
-          className="text-vv-white hover:text-vv-orange transition-colors duration-300 animate-bounce-slow"
+          onClick={scrollToAbout}
+          className="text-white hover:text-vv-orange transition-colors duration-300 animate-bounce-slow"
         >
           <ArrowDown size={32} />
         </button>

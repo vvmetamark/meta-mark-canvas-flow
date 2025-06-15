@@ -1,65 +1,87 @@
 
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, Play } from 'lucide-react';
 
 const VideoSection = () => {
   return (
-    <div className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Video */}
-      <div className="absolute inset-0">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-full object-cover"
-        >
-          <source src="https://player.vimeo.com/external/371883993.sd.mp4?s=5a1c3d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c&profile_id=164&oauth2_token_id=57447761" type="video/mp4" />
-        </video>
-        
-        {/* Fallback Image for Mobile/Unsupported Browsers */}
-        <div
-          className="absolute inset-0 bg-cover bg-center md:hidden"
-          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1605810230434-7631ac76ec81)' }}
-        />
-        
-        <div className="absolute inset-0 bg-black/50" />
-      </div>
-
-      {/* Content */}
-      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto animate-fade-in">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-vv-white mb-6">
-            We Believe in the Power of
-            <span className="text-vv-orange block mt-2">Creative Storytelling</span>
+    <div className="py-20 bg-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-vv-navy mb-6">
+            We Are <span className="text-vv-orange">VV Metamark</span>
           </h2>
-          <p className="text-lg md:text-xl text-vv-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Every brand has a unique story waiting to be told. Through innovative design, strategic thinking, and cutting-edge technology, we help brands connect with their audiences in meaningful ways.
+          <p className="text-lg text-vv-navy/70 max-w-3xl mx-auto mb-12">
+            A creative agency dedicated to transforming ideas into compelling visual stories. We combine strategic thinking with innovative design to help brands connect with their audiences in meaningful ways.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
-              onClick={() => document.querySelector('#services')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-vv-orange hover:bg-vv-orange-dark text-vv-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
-            >
-              Our Services
-            </button>
-            <button
-              onClick={() => document.querySelector('#work')?.scrollIntoView({ behavior: 'smooth' })}
-              className="border-2 border-vv-white text-vv-white hover:bg-vv-white hover:text-vv-navy px-8 py-4 rounded-lg font-semibold transition-all duration-300"
-            >
-              View Portfolio
-            </button>
+        </div>
+
+        {/* Stats Section */}
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div className="text-center">
+            <div className="text-4xl md:text-5xl font-bold text-vv-orange mb-2">150+</div>
+            <p className="text-vv-navy/70">Happy Clients</p>
+          </div>
+          <div className="text-center">
+            <div className="text-4xl md:text-5xl font-bold text-vv-orange mb-2">300+</div>
+            <p className="text-vv-navy/70">Projects Completed</p>
+          </div>
+          <div className="text-center">
+            <div className="text-4xl md:text-5xl font-bold text-vv-orange mb-2">5+</div>
+            <p className="text-vv-navy/70">Years Experience</p>
           </div>
         </div>
-      </div>
 
-      {/* Scroll Down Arrow */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
-        <button
-          onClick={() => document.querySelector('#services')?.scrollIntoView({ behavior: 'smooth' })}
-          className="text-vv-white hover:text-vv-orange transition-colors duration-300 animate-bounce-slow"
-        >
-          <ArrowDown size={32} />
-        </button>
+        {/* Video Section */}
+        <div className="relative max-w-4xl mx-auto">
+          <div className="relative aspect-video rounded-lg overflow-hidden shadow-2xl">
+            <img
+              src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81"
+              alt="About VV Metamark"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+              <button className="bg-vv-orange hover:bg-vv-orange-dark text-white p-6 rounded-full transition-all duration-300 transform hover:scale-110">
+                <Play size={48} />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* About Content */}
+        <div className="grid md:grid-cols-2 gap-12 mt-16">
+          <div>
+            <h3 className="text-2xl font-bold text-vv-navy mb-4">Our Vision</h3>
+            <p className="text-vv-navy/70 mb-6">
+              To be the leading creative agency that bridges the gap between brands and their audiences through innovative design, strategic thinking, and cutting-edge technology.
+            </p>
+            <ul className="space-y-2 text-vv-navy/70">
+              <li>• Creative Excellence</li>
+              <li>• Strategic Innovation</li>
+              <li>• Client-Centric Approach</li>
+              <li>• Results-Driven Solutions</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-2xl font-bold text-vv-navy mb-4">Our Mission</h3>
+            <p className="text-vv-navy/70 mb-6">
+              We empower businesses to tell their unique stories through compelling design and strategic marketing solutions that drive growth and build lasting connections.
+            </p>
+            <div className="flex gap-4">
+              <button
+                onClick={() => document.querySelector('#services')?.scrollIntoView({ behavior: 'smooth' })}
+                className="bg-vv-orange hover:bg-vv-orange-dark text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300"
+              >
+                Our Services
+              </button>
+              <button
+                onClick={() => document.querySelector('#work')?.scrollIntoView({ behavior: 'smooth' })}
+                className="border-2 border-vv-orange text-vv-orange hover:bg-vv-orange hover:text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300"
+              >
+                View Work
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
