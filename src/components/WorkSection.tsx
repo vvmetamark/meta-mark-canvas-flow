@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Badge } from '@/components/ui/badge';
@@ -187,13 +186,15 @@ const WorkSection = () => {
                 <X size={20} />
               </button>
 
-              {/* Project Image/Logo */}
-              <div className="relative h-80 bg-gradient-to-br from-pink-500 via-orange-500 to-orange-600 flex items-center justify-center">
+              {/* Project Image Cover */}
+              <div className="relative h-80 overflow-hidden">
                 <img
-                  src={selectedProject.logo}
+                  src={selectedProject.thumbnail}
                   alt={selectedProject.title}
-                  className="max-w-xs max-h-48 object-contain"
+                  className="w-full h-full object-cover"
                 />
+                {/* Overlay for better text readability if needed */}
+                <div className="absolute inset-0 bg-black/20"></div>
               </div>
 
               {/* Project Details */}
