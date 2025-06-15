@@ -1,15 +1,11 @@
-
 import React from 'react';
 
 const clientLogos = [
-  "/lovable-uploads/3f546713-43c7-4bc6-b4be-76224b6079af.png",
-  "/lovable-uploads/42555497-872f-4728-b2c4-28b9729298ff.png",
-  "/lovable-uploads/862e01ec-a5bb-4a3d-badf-45bd3a2bed0d.png",
-  "/lovable-uploads/97bd75ef-e661-40c2-98b5-6e415cbb991f.png",
-  "/lovable-uploads/9b8a2c68-ad80-47be-82f9-1973e62097c8.png",
-  "/lovable-uploads/ded22791-3e09-4796-bb83-a6a66a798438.png",
-  "/lovable-uploads/a3c6c285-451b-45bd-b9ba-084902d58dd1.png",
-  "/lovable-uploads/a603732d-da6e-4cc4-983b-01c0ac986c53.png",
+  "/lovable-uploads/ecca6760-aab2-4cab-bb05-33540c04d774.png", // Takshilah Global School
+  "/lovable-uploads/f0aa6544-d42a-4e73-90f2-2e292669660e.png", // Two Dots
+  "/lovable-uploads/dbf64354-0941-40ab-a3e9-3d0e507ce0de.png", // Pixel - R
+  "/lovable-uploads/cc7a7f23-7e7e-4896-becd-354e2cc64e82.png", // PS Endeavours
+  "/lovable-uploads/c1f5e656-172e-48a8-b834-6f8c85c99bd0.png", // Innovate Inc.
 ];
 
 const ClientLogos = () => {
