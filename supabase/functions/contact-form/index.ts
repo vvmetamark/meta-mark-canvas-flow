@@ -3,8 +3,6 @@ import { serve } from 'https://deno.land/std@0.168.0/http/server.ts'
 // Supabase Edge Functions run on Deno, so we import Resend from a URL.
 import { Resend } from 'https://esm.sh/resend@3.2.0'
 
-// Get the Resend API key you stored in Supabase secrets.
-const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY')
 const CONTACT_EMAIL = 'vvmetamark@gmail.com'
 
 const corsHeaders = {
@@ -19,8 +17,9 @@ serve(async (req) => {
   }
 
   try {
+    const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY')
     if (!RESEND_API_KEY) {
-      throw new Error('RESEND_API_KEY is not set in Supabase secrets.')
+      throw new Error('RESEND_API_KEY is not set in Supabase secrets. Please add it in your project settings.')
     }
     
     const resend = new Resend(RESEND_API_KEY)
