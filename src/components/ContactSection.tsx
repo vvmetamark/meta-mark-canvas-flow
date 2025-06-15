@@ -38,20 +38,6 @@ const ContactSection = () => {
                     </p>
                   </div>
                 </div>
-                
-                {/* Bangalore Map */}
-                <div className="h-48 bg-gray-200 rounded-lg overflow-hidden mb-6">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248849.886539092!2d77.49085452148449!3d12.953945613176067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1625000000000!5m2!1sen!2sin"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="Bangalore Office Location"
-                  />
-                </div>
               </div>
 
               {/* Ambur Office */}
@@ -68,20 +54,6 @@ const ContactSection = () => {
                       Ambur, Tamil Nadu 635802
                     </p>
                   </div>
-                </div>
-                
-                {/* Ambur Map */}
-                <div className="h-48 bg-gray-200 rounded-lg overflow-hidden mb-6">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15555.234567890123!2d78.71562893955078!3d12.79216058798828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad38e61fa68c9f%3A0x2b49e7a8c9876543!2sAmbur%2C%20Tamil%20Nadu%20635802!5e0!3m2!1sen!2sin!4v1625000000001!5m2!1sen!2sin"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="Ambur Office Location"
-                  />
                 </div>
               </div>
 
@@ -200,12 +172,28 @@ const ContactSection = () => {
           </div>
         </div>
 
-        {/* Footer */}
-        <div className="bg-vv-navy text-white py-8 rounded-lg">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <p className="text-sm">© 2025 VV Metamark. All rights reserved. | Designed with ❤️ by VV Metamark</p>
-            </div>
+        {/* Map Section */}
+        <div className="bg-white rounded-lg p-4 shadow-lg">
+          <div className="h-64 bg-gray-200 rounded-lg overflow-hidden">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.4266963755815!2d77.59456831533322!3d12.935518819048157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1441b9b8e1f7%3A0xa1b2c3d4e5f67890!2sKoramangala%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1625000000000!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="VV Metamark Location"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <div className="bg-vv-navy text-white py-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <p className="text-sm">© 2025 VV Metamark. All rights reserved. | Designed with ❤️ by VV Metamark</p>
           </div>
         </div>
       </div>
