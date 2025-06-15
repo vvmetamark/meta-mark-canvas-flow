@@ -2,88 +2,135 @@
 import { ArrowDown, Play } from 'lucide-react';
 
 const VideoSection = () => {
+  const scrollToServices = () => {
+    const element = document.querySelector('#services');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <div className="py-20 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-vv-navy mb-6">
-            We Are <span className="text-vv-orange">VV Metamark</span>
-          </h2>
-          <p className="text-lg text-vv-navy/70 max-w-3xl mx-auto mb-12">
-            A creative agency dedicated to transforming ideas into compelling visual stories. We combine strategic thinking with innovative design to help brands connect with their audiences in meaningful ways.
-          </p>
+    <>
+      {/* Hero Video Section */}
+      <div className="relative h-screen bg-gradient-to-br from-vv-navy/90 to-vv-blue/90 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c"
+            alt="VV Metamark Team"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-vv-navy/70"></div>
         </div>
 
-        {/* Stats Section */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
-          <div className="text-center">
-            <div className="text-4xl md:text-5xl font-bold text-vv-orange mb-2">150+</div>
-            <p className="text-vv-navy/70">Happy Clients</p>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl md:text-5xl font-bold text-vv-orange mb-2">300+</div>
-            <p className="text-vv-navy/70">Projects Completed</p>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl md:text-5xl font-bold text-vv-orange mb-2">5+</div>
-            <p className="text-vv-navy/70">Years Experience</p>
-          </div>
-        </div>
-
-        {/* Video Section */}
-        <div className="relative max-w-4xl mx-auto">
-          <div className="relative aspect-video rounded-lg overflow-hidden shadow-2xl">
-            <img
-              src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81"
-              alt="About VV Metamark"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-              <button className="bg-vv-orange hover:bg-vv-orange-dark text-white p-6 rounded-full transition-all duration-300 transform hover:scale-110">
+        {/* Content */}
+        <div className="relative z-10 h-full flex items-center">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+            {/* Play Button */}
+            <div className="mb-8">
+              <button className="bg-vv-orange hover:bg-vv-orange-dark text-white p-6 rounded-full transition-all duration-300 transform hover:scale-110 mx-auto">
                 <Play size={48} />
               </button>
             </div>
+
+            {/* Main Heading */}
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              We Are <span className="text-vv-orange">VV Metamark</span>
+            </h1>
+
+            {/* Description */}
+            <p className="text-lg md:text-xl max-w-4xl mx-auto mb-12 leading-relaxed">
+              A passionate team of creative professionals dedicated to transforming brands through{' '}
+              <span className="text-vv-orange font-semibold">innovative design</span>,{' '}
+              <span className="text-vv-orange font-semibold">strategic marketing</span>, and{' '}
+              <span className="text-vv-orange font-semibold">digital excellence</span>.
+            </p>
+
+            {/* Stats */}
+            <div className="grid md:grid-cols-3 gap-8 max-w-3xl mx-auto mb-12">
+              <div className="text-center">
+                <div className="text-4xl md:text-5xl font-bold text-vv-orange mb-2">89+</div>
+                <p className="text-white/90">Projects Completed</p>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl md:text-5xl font-bold text-vv-orange mb-2">100+</div>
+                <p className="text-white/90">Happy Clients</p>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl md:text-5xl font-bold text-vv-orange mb-2">3+</div>
+                <p className="text-white/90">Years Experience</p>
+              </div>
+            </div>
+
+            {/* Scroll Down Arrow */}
+            <button
+              onClick={scrollToServices}
+              className="text-white hover:text-vv-orange transition-colors duration-300 animate-bounce-slow"
+            >
+              <ArrowDown size={32} />
+            </button>
           </div>
         </div>
+      </div>
 
-        {/* About Content */}
-        <div className="grid md:grid-cols-2 gap-12 mt-16">
-          <div>
-            <h3 className="text-2xl font-bold text-vv-navy mb-4">Our Vision</h3>
-            <p className="text-vv-navy/70 mb-6">
-              To be the leading creative agency that bridges the gap between brands and their audiences through innovative design, strategic thinking, and cutting-edge technology.
-            </p>
-            <ul className="space-y-2 text-vv-navy/70">
-              <li>• Creative Excellence</li>
-              <li>• Strategic Innovation</li>
-              <li>• Client-Centric Approach</li>
-              <li>• Results-Driven Solutions</li>
-            </ul>
+      {/* About Section */}
+      <div className="py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              ABOUT <span className="text-vv-orange">VV METAMARK</span>
+            </h2>
+            <div className="w-24 h-1 bg-vv-orange mx-auto"></div>
           </div>
-          <div>
-            <h3 className="text-2xl font-bold text-vv-navy mb-4">Our Mission</h3>
-            <p className="text-vv-navy/70 mb-6">
-              We empower businesses to tell their unique stories through compelling design and strategic marketing solutions that drive growth and build lasting connections.
-            </p>
-            <div className="flex gap-4">
-              <button
-                onClick={() => document.querySelector('#services')?.scrollIntoView({ behavior: 'smooth' })}
-                className="bg-vv-orange hover:bg-vv-orange-dark text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300"
-              >
-                Our Services
-              </button>
-              <button
-                onClick={() => document.querySelector('#work')?.scrollIntoView({ behavior: 'smooth' })}
-                className="border-2 border-vv-orange text-vv-orange hover:bg-vv-orange hover:text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300"
-              >
-                View Work
-              </button>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* Left Column */}
+            <div>
+              <h3 className="text-2xl font-bold text-vv-navy mb-6">A Creative Force with Purpose</h3>
+              <p className="text-vv-navy/80 mb-6 leading-relaxed">
+                Greetings from <span className="text-vv-orange font-semibold">VV Metamark</span>, a creative force driven by purpose and passion. "VV" bears the initials of its founders, <span className="text-vv-orange font-semibold">Venkataswari</span> and <span className="text-vv-orange font-semibold">Vani</span>, but the spirit behind it is creativity.
+              </p>
+              <p className="text-vv-navy/80 mb-6 leading-relaxed">
+                With years of experience as pioneers in <span className="text-vv-orange font-semibold">digital marketing</span>, <span className="text-vv-orange font-semibold">content production</span>, <span className="text-vv-orange font-semibold">graphic design</span>, and <span className="text-vv-orange font-semibold">web editing</span>, both partners are based in Bangalore.
+              </p>
+              <p className="text-vv-navy/80 leading-relaxed">
+                VV Metamark is more than just an agency — it's a movement that aims to provide <span className="text-vv-orange font-semibold">Ambur</span>, <span className="text-vv-orange font-semibold">Vellore</span>, and beyond with top-notch creative solutions.
+              </p>
+            </div>
+
+            {/* Right Column */}
+            <div className="space-y-8">
+              {/* Our Vision */}
+              <div>
+                <h4 className="text-xl font-bold text-vv-navy mb-4">Our Vision</h4>
+                <p className="text-vv-navy/80 leading-relaxed">
+                  To become a trusted creative partner for individuals, institutions, and enterprises by delivering accessible, innovative, and impactful branding and digital marketing services.
+                </p>
+              </div>
+
+              {/* Our Mission */}
+              <div>
+                <h4 className="text-xl font-bold text-vv-navy mb-4">Our Mission</h4>
+                <ul className="space-y-3 text-vv-navy/80">
+                  <li className="flex items-start">
+                    <span className="text-vv-orange mr-2">•</span>
+                    Empower small businesses and startups with professional branding
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-vv-orange mr-2">•</span>
+                    Bring urban-level creativity to semi-urban and rural regions
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-vv-orange mr-2">•</span>
+                    Bridge the digital divide with tailored content strategies
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
