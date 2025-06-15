@@ -5,88 +5,68 @@ import { X } from 'lucide-react';
 
 const WorkSection = () => {
   const [activeFilter, setActiveFilter] = useState('All');
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedProject, setSelectedProject] = useState<any>(null);
 
   const filters = ['All', 'Branding', 'Web Design', 'Digital Marketing', 'Print Design'];
 
   const projects = [
     {
       id: 1,
-      title: "The Mumbai Local Street",
+      title: "The Takshilah Global School",
       category: "Branding",
-      thumbnail: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5",
-      client: "Urban Transit",
-      description: "Complete brand identity and launch visuals for Urban Transit, establishing a strong foundation for business growth.",
+      thumbnail: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=500",
+      client: "The Takshilah Global School",
+      description: "Comprehensive branding strategy and promotional materials for The Takshilah Global School, aiming to enhance its public presence and student enrollment.",
       featured: true,
       logo: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=300&h=200&fit=crop"
     },
     {
       id: 2,
-      title: "Tea Pot",
-      category: "Product Design",
-      thumbnail: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07",
-      client: "Artisan Crafts",
-      description: "Elegant product design and branding for premium tea accessories, focusing on traditional craftsmanship.",
+      title: "Two Dots",
+      category: "Branding",
+      thumbnail: "https://images.unsplash.com/photo-1554774853-719586f82d77?w=500",
+      client: "Two Dots Creative",
+      description: "Creative logo design and a complete digital identity package for Two Dots, establishing a memorable and impactful online presence.",
       featured: false,
       logo: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=300&h=200&fit=crop"
     },
     {
       id: 3,
-      title: "Agriculture Co",
-      category: "Branding",
-      thumbnail: "https://images.unsplash.com/photo-1500673922987-e212871fec22",
-      client: "Green Solutions",
-      description: "Comprehensive branding solution for agricultural technology company, emphasizing sustainability and innovation.",
+      title: "Agro Life Print_R",
+      category: "Print Design",
+      thumbnail: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=500",
+      client: "Agro Life",
+      description: "Visually compelling print materials and agri-brand visuals for Agro Life, supporting their marketing efforts in the agricultural sector.",
       featured: true,
       logo: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=300&h=200&fit=crop"
     },
     {
       id: 4,
-      title: "Pixie",
+      title: "Pixel - R",
       category: "Digital Marketing",
-      thumbnail: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
-      client: "Tech Startup",
-      description: "Digital marketing strategy and visual identity for innovative tech startup, targeting young professionals.",
+      thumbnail: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=500",
+      client: "Pixel - R Studios",
+      description: "Engaging creative edits and video reels for Pixel - R, designed to boost social media engagement and brand visibility.",
       featured: false,
       logo: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=300&h=200&fit=crop"
     },
     {
       id: 5,
-      title: "SCO Packaging",
-      category: "Packaging",
-      thumbnail: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81",
-      client: "Consumer Goods",
-      description: "Sustainable packaging design for consumer goods company, balancing aesthetics with environmental responsibility.",
+      title: "SGB",
+      category: "Print Design",
+      thumbnail: "https://images.unsplash.com/photo-1532012197267-da84d127e765?w=500",
+      client: "SGB Publishing",
+      description: "Elegant book cover designs and comprehensive publishing design services for SGB, enhancing the appeal of their literary works.",
       featured: true,
       logo: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=300&h=200&fit=crop"
     },
     {
       id: 6,
-      title: "PPP Showcase",
-      category: "Web Design",
-      thumbnail: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
-      client: "Portfolio Site",
-      description: "Modern web design and development for professional portfolio showcase, emphasizing clean aesthetics.",
-      featured: false,
-      logo: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=300&h=200&fit=crop"
-    },
-    {
-      id: 7,
-      title: "Tech Theme Branding",
+      title: "PS Endeavours",
       category: "Branding",
-      thumbnail: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
-      client: "Technology",
-      description: "Complete brand identity for technology company, featuring modern design elements and digital-first approach.",
-      featured: true,
-      logo: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=300&h=200&fit=crop"
-    },
-    {
-      id: 8,
-      title: "Business Campaign",
-      category: "Digital Marketing",
-      thumbnail: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
-      client: "Corporate",
-      description: "Strategic digital marketing campaign for corporate client, driving engagement and brand awareness.",
+      thumbnail: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=500",
+      client: "PS Endeavours",
+      description: "Complete startup identity and launch visuals for PS Endeavours, building a strong brand foundation for their new venture.",
       featured: false,
       logo: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=300&h=200&fit=crop"
     }
