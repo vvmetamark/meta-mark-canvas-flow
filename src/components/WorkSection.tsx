@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Badge } from '@/components/ui/badge';
@@ -14,7 +15,7 @@ const WorkSection = () => {
       id: 1,
       title: "The Takshilah Global School",
       category: "Branding",
-      thumbnail: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=500",
+      thumbnail: "/lovable-uploads/42555497-872f-4728-b2c4-28b9729298ff.png",
       client: "The Takshilah Global School",
       description: "Comprehensive branding strategy and promotional materials for The Takshilah Global School, aiming to enhance its public presence and student enrollment.",
       featured: true,
@@ -24,7 +25,7 @@ const WorkSection = () => {
       id: 2,
       title: "Two Dots",
       category: "Branding",
-      thumbnail: "https://images.unsplash.com/photo-1554774853-719586f82d77?w=500",
+      thumbnail: "/lovable-uploads/9a018678-d5d9-4938-82b2-52e0a02908ce.png",
       client: "Two Dots Creative",
       description: "Creative logo design and a complete digital identity package for Two Dots, establishing a memorable and impactful online presence.",
       featured: false,
@@ -34,7 +35,7 @@ const WorkSection = () => {
       id: 3,
       title: "Agro Life Print_R",
       category: "Print Design",
-      thumbnail: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=500",
+      thumbnail: "/lovable-uploads/cc7a7f23-7e7e-4896-becd-354e2cc64e82.png",
       client: "Agro Life",
       description: "Visually compelling print materials and agri-brand visuals for Agro Life, supporting their marketing efforts in the agricultural sector.",
       featured: true,
@@ -44,7 +45,7 @@ const WorkSection = () => {
       id: 4,
       title: "Pixel - R",
       category: "Digital Marketing",
-      thumbnail: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=500",
+      thumbnail: "/lovable-uploads/f0aa6544-d42a-4e73-90f2-2e292669660e.png",
       client: "Pixel - R Studios",
       description: "Engaging creative edits and video reels for Pixel - R, designed to boost social media engagement and brand visibility.",
       featured: false,
@@ -54,7 +55,7 @@ const WorkSection = () => {
       id: 5,
       title: "SGB",
       category: "Print Design",
-      thumbnail: "https://images.unsplash.com/photo-1532012197267-da84d127e765?w=500",
+      thumbnail: "/lovable-uploads/97bd75ef-e661-40c2-98b5-6e415cbb991f.png",
       client: "SGB Publishing",
       description: "Elegant book cover designs and comprehensive publishing design services for SGB, enhancing the appeal of their literary works.",
       featured: true,
@@ -64,7 +65,7 @@ const WorkSection = () => {
       id: 6,
       title: "PS Endeavours",
       category: "Branding",
-      thumbnail: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=500",
+      thumbnail: "/lovable-uploads/862e01ec-a5bb-4a3d-badf-45bd3a2bed0d.png",
       client: "PS Endeavours",
       description: "Complete startup identity and launch visuals for PS Endeavours, building a strong brand foundation for their new venture.",
       featured: false,
