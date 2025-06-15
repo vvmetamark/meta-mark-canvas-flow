@@ -51,9 +51,13 @@ const Header = ({ activeSection }: HeaderProps) => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <div className="text-2xl lg:text-3xl font-bold text-vv-navy">
-              VV Metamark
-            </div>
+            <button onClick={() => scrollToSection('#home')} className="focus:outline-none" aria-label="Go to home page">
+              <img
+                src="/lovable-uploads/3f546713-43c7-4bc6-b4be-76224b6079af.png"
+                alt="VV Metamark Logo"
+                className="h-10 lg:h-12 object-contain"
+              />
+            </button>
           </div>
 
           {/* Desktop Navigation */}
