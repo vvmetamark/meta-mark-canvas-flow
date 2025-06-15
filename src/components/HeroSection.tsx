@@ -111,9 +111,9 @@ const HeroSection = () => {
       {/* Main Content */}
       <div className="relative z-20 h-full flex items-center">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
-            <div className="text-white">
+          <div className="flex justify-center">
+            {/* Centered Content */}
+            <div className="text-white text-center max-w-4xl">
               {slides.map((slide, index) => (
                 <div
                   key={index}
@@ -127,7 +127,7 @@ const HeroSection = () => {
                     <span className="block text-vv-orange">{slide.title}</span>
                     <span className="text-white">{slide.subtitle}</span>
                   </h1>
-                  <p className="text-xl text-white/90 mb-8 max-w-lg leading-relaxed">
+                  <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
                     {slide.description}
                   </p>
                   <button
@@ -138,19 +138,6 @@ const HeroSection = () => {
                   </button>
                 </div>
               ))}
-            </div>
-
-            {/* Right Content - Clean Phone Frame */}
-            <div className="hidden lg:block relative">
-              <div className="relative mx-auto">
-                {/* Phone Frame */}
-                <div className="relative w-80 h-96 bg-black rounded-3xl p-2 shadow-2xl transform rotate-12">
-                  <div className="w-full h-full bg-white rounded-2xl overflow-hidden relative">
-                    {/* Clean gradient background */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200"></div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
