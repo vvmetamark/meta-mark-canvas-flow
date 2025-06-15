@@ -140,21 +140,14 @@ const HeroSection = () => {
               ))}
             </div>
 
-            {/* Right Content - Phone Frame Only */}
+            {/* Right Content - Clean Phone Frame */}
             <div className="hidden lg:block relative">
               <div className="relative mx-auto">
                 {/* Phone Frame */}
                 <div className="relative w-80 h-96 bg-black rounded-3xl p-2 shadow-2xl transform rotate-12">
                   <div className="w-full h-full bg-white rounded-2xl overflow-hidden relative">
-                    {/* Empty phone screen with subtle gradient */}
+                    {/* Clean gradient background */}
                     <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200"></div>
-                    
-                    {/* Megaphone icon in center */}
-                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                      <div className="w-16 h-16 bg-vv-orange rounded-full flex items-center justify-center shadow-lg">
-                        <span className="text-white text-2xl">📢</span>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
