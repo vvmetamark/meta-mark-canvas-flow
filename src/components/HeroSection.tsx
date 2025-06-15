@@ -11,7 +11,7 @@ const HeroSection = () => {
       subtitle: "That Converts",
       description: "Strategic digital campaigns that drive engagement, boost visibility, and deliver measurable results.",
       ctaText: "See Our Campaigns",
-      bgImage: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=1920&h=1080&fit=crop",
+      bgImage: "/lovable-uploads/dbf64354-0941-40ab-a3e9-3d0e507ce0de.png",
       ctaAction: "work"
     },
     {
@@ -27,7 +27,7 @@ const HeroSection = () => {
       subtitle: "That Resonates",
       description: "Comprehensive brand strategies that connect with your audience and build meaningful relationships.",
       ctaText: "Learn More",
-      bgImage: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1920&h=1080&fit=crop",
+      bgImage: "/lovable-uploads/9b8a2c68-ad80-47be-82f9-1973e62097c8.png",
       ctaAction: "about"
     }
   ];
