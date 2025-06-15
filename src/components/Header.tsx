@@ -16,7 +16,6 @@ const Header = ({ activeSection }: HeaderProps) => {
     { name: 'Services', href: '#services' },
     { name: 'Work', href: '#work' },
     { name: 'Testimonials', href: '#testimonials' },
-    { name: 'Contact', href: '#contact' },
   ];
 
   useEffect(() => {
@@ -30,6 +29,14 @@ const Header = ({ activeSection }: HeaderProps) => {
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMenuOpen(false);
+  };
+
+  const scrollToContact = () => {
+    const element = document.querySelector('#contact');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
@@ -50,21 +57,31 @@ const Header = ({ activeSection }: HeaderProps) => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
-            {navigation.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => scrollToSection(item.href)}
-                className={`text-sm lg:text-base font-medium transition-colors duration-200 ${
-                  activeSection === item.href.replace('#', '')
-                    ? 'text-vv-orange-dark'
-                    : 'text-vv-navy hover:text-vv-orange-dark'
-                }`}
-              >
-                {item.name}
-              </button>
-            ))}
-          </nav>
+          <div className="hidden md:flex items-center space-x-8">
+            <nav className="flex space-x-8">
+              {navigation.map((item) => (
+                <button
+                  key={item.name}
+                  onClick={() => scrollToSection(item.href)}
+                  className={`text-sm lg:text-base font-medium transition-colors duration-200 ${
+                    activeSection === item.href.replace('#', '')
+                      ? 'text-vv-orange-dark'
+                      : 'text-vv-navy hover:text-vv-orange-dark'
+                  }`}
+                >
+                  {item.name}
+                </button>
+              ))}
+            </nav>
+            
+            {/* GET IN TOUCH Button */}
+            <button
+              onClick={scrollToContact}
+              className="bg-vv-orange hover:bg-vv-orange-dark text-white px-6 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
+            >
+              GET IN TOUCH
+            </button>
+          </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden">
@@ -94,6 +111,12 @@ const Header = ({ activeSection }: HeaderProps) => {
                   {item.name}
                 </button>
               ))}
+              <button
+                onClick={scrollToContact}
+                className="block w-full text-left px-3 py-2 text-base font-medium bg-vv-orange text-white rounded-lg mt-2"
+              >
+                GET IN TOUCH
+              </button>
             </div>
           </div>
         )}

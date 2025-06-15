@@ -15,10 +15,11 @@ const ContactSection = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Contact Information */}
+          {/* Contact Information with Two Locations */}
           <div>
+            {/* Bangalore Location */}
             <div className="bg-white rounded-lg p-8 shadow-lg mb-8">
-              <h4 className="text-2xl font-bold text-vv-navy mb-6">Get in Touch</h4>
+              <h4 className="text-2xl font-bold text-vv-navy mb-6">Bangalore Office</h4>
               
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
@@ -29,8 +30,8 @@ const ContactSection = () => {
                     <h5 className="font-semibold text-vv-navy mb-1">Visit Us</h5>
                     <p className="text-vv-navy/70">
                       123 Creative Street<br />
-                      Design District<br />
-                      Mumbai, Maharashtra 400001
+                      Koramangala<br />
+                      Bangalore, Karnataka 560095
                     </p>
                   </div>
                 </div>
@@ -51,41 +52,79 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h5 className="font-semibold text-vv-navy mb-1">Email Us</h5>
-                    <p className="text-vv-navy/70">hello@vvmetamark.com</p>
+                    <p className="text-vv-navy/70">bangalore@vvmetamark.com</p>
                   </div>
                 </div>
               </div>
+
+              {/* Bangalore Map */}
+              <div className="mt-6 h-48 bg-gray-200 rounded-lg overflow-hidden">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.4266963755815!2d77.59456831533322!3d12.935518819048157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1441b9b8e1f7%3A0xa1b2c3d4e5f67890!2sKoramangala%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1625000000000!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="VV Metamark Bangalore Location"
+                />
+              </div>
             </div>
 
-            {/* Quick Contact Form */}
+            {/* Ambur Location */}
             <div className="bg-white rounded-lg p-8 shadow-lg">
-              <h4 className="text-xl font-bold text-vv-navy mb-4">Send Message</h4>
-              <form className="space-y-4">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <input
-                    type="text"
-                    placeholder="Your Name"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-vv-orange focus:border-transparent"
-                  />
-                  <input
-                    type="email"
-                    placeholder="Your Email"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-vv-orange focus:border-transparent"
-                  />
+              <h4 className="text-2xl font-bold text-vv-navy mb-6">Ambur Office</h4>
+              
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="bg-vv-orange text-white p-3 rounded-full flex-shrink-0">
+                    <MapPin size={20} />
+                  </div>
+                  <div>
+                    <h5 className="font-semibold text-vv-navy mb-1">Visit Us</h5>
+                    <p className="text-vv-navy/70">
+                      456 Business Hub<br />
+                      Industrial Area<br />
+                      Ambur, Tamil Nadu 635802
+                    </p>
+                  </div>
                 </div>
-                <textarea
-                  rows={4}
-                  placeholder="Your Message"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-vv-orange focus:border-transparent resize-none"
+
+                <div className="flex items-center gap-4">
+                  <div className="bg-vv-orange text-white p-3 rounded-full flex-shrink-0">
+                    <Phone size={20} />
+                  </div>
+                  <div>
+                    <h5 className="font-semibold text-vv-navy mb-1">Call Us</h5>
+                    <p className="text-vv-navy/70">+91 98765 43211</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4">
+                  <div className="bg-vv-orange text-white p-3 rounded-full flex-shrink-0">
+                    <Mail size={20} />
+                  </div>
+                  <div>
+                    <h5 className="font-semibold text-vv-navy mb-1">Email Us</h5>
+                    <p className="text-vv-navy/70">ambur@vvmetamark.com</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Ambur Map */}
+              <div className="mt-6 h-48 bg-gray-200 rounded-lg overflow-hidden">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.3345234567890!2d78.71234567891234!3d12.791234567890123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad38f3d5e6f7a8%3A0x1234567890abcdef!2sAmbur%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1625000000001!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="VV Metamark Ambur Location"
                 />
-                <button
-                  type="submit"
-                  className="w-full bg-vv-orange text-white py-3 rounded-lg font-semibold hover:bg-vv-orange-dark transition-colors duration-300 flex items-center justify-center gap-2"
-                >
-                  <Send size={20} />
-                  Send Message
-                </button>
-              </form>
+              </div>
             </div>
           </div>
 
@@ -175,20 +214,6 @@ const ContactSection = () => {
             </form>
           </div>
         </div>
-      </div>
-
-      {/* Map Section */}
-      <div className="h-96 bg-gray-200">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.8426128521464!2d72.82706831434836!3d19.018255587120707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ce8a1e7a2d4d%3A0x4b89e3f3e4f5f6f7!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1625000000000!5m2!1sen!2sin"
-          width="100%"
-          height="100%"
-          style={{ border: 0 }}
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          title="VV Metamark Location"
-        />
       </div>
 
       {/* Footer */}
