@@ -14,7 +14,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter basename="/meta-mark-canvas-flow/">
+      <BrowserRouter basename={import.meta.env.PROD ? "/meta-mark-canvas-flow/" : "/"}>
         <Routes>
           <Route path="/" element={<Index />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

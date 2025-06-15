@@ -1,3 +1,4 @@
+
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
@@ -5,7 +6,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/meta-mark-canvas-flow/", // Add this line for GitHub Pages
+  base: mode === 'production' ? "/meta-mark-canvas-flow/" : "/", // Use sub-path for production builds
   server: {
     host: "::",
     port: 8080,
