@@ -173,18 +173,36 @@ const ContactSection = () => {
         </div>
 
         {/* Map Section */}
-        <div className="bg-white rounded-lg p-4 shadow-lg">
-          <div className="h-64 bg-gray-200 rounded-lg overflow-hidden">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.4266963755815!2d77.59456831533322!3d12.935518819048157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1441b9b8e1f7%3A0xa1b2c3d4e5f67890!2sKoramangala%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1625000000000!5m2!1sen!2sin"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="VV Metamark Location"
-            />
+        <div className="grid md:grid-cols-2 gap-8">
+          <div className="bg-white rounded-lg p-4 shadow-lg">
+            <h4 className="font-bold text-vv-navy text-lg mb-4 text-center">Bangalore Office</h4>
+            <div className="h-64 bg-gray-200 rounded-lg overflow-hidden">
+              <iframe
+                src="https://maps.google.com/maps?q=Bengaluru%2C%20Karnataka&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="VV Metamark Bangalore Location"
+              ></iframe>
+            </div>
+          </div>
+          <div className="bg-white rounded-lg p-4 shadow-lg">
+            <h4 className="font-bold text-vv-navy text-lg mb-4 text-center">Ambur Office</h4>
+            <div className="h-64 bg-gray-200 rounded-lg overflow-hidden">
+              <iframe
+                src="https://maps.google.com/maps?q=Ambur%2C%20Tamil%20Nadu&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="VV Metamark Ambur Location"
+              ></iframe>
+            </div>
           </div>
         </div>
       </div>
