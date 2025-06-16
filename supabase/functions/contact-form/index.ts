@@ -1,6 +1,5 @@
 
 import { serve } from 'https://deno.land/std@0.168.0/http/server.ts'
-// Supabase Edge Functions run on Deno, so we import Resend from a URL.
 import { Resend } from 'https://esm.sh/resend@3.2.0'
 
 const CONTACT_EMAIL = 'vvmetamark@gmail.com'
@@ -11,33 +10,38 @@ const corsHeaders = {
 }
 
 serve(async (req) => {
-  // This is needed for CORS preflight requests.
   if (req.method === 'OPTIONS') {
     return new Response('ok', { headers: corsHeaders })
   }
 
   try {
     const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY')
+    console.log('RESEND_API_KEY exists:', !!RESEND_API_KEY)
+    
     if (!RESEND_API_KEY) {
-      throw new Error('RESEND_API_KEY is not set in Supabase secrets. Please add it in your project settings.')
+      console.error('RESEND_API_KEY is missing from environment variables')
+      throw new Error('RESEND_API_KEY is not configured in Supabase secrets')
     }
     
     const resend = new Resend(RESEND_API_KEY)
     const { name, email, subject, message } = await req.json()
 
+    console.log('Processing contact form submission:', { name, email, subject })
+
     if (!name || !email || !subject || !message) {
+      console.error('Missing required fields:', { name: !!name, email: !!email, subject: !!subject, message: !!message })
       return new Response(JSON.stringify({ error: 'Missing required fields' }), {
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
         status: 400,
       })
     }
     
-    // NOTE: For production, you must use a domain you have verified in Resend.
-    // I've updated this to use your company's domain. Please ensure you have verified 'vvmetamark.com' in your Resend account.
-    const fromAddress = 'VV Metamark <noreply@vvmetamark.com>';
+    // Use Resend's verified domain for reliable delivery
+    const fromAddress = 'VV Metamark <onboarding@resend.dev>';
 
+    console.log('Sending notification email to company...')
     // 1. Send notification email to the company
-    await resend.emails.send({
+    const companyEmailResult = await resend.emails.send({
       from: fromAddress,
       to: [CONTACT_EMAIL],
       reply_to: email,
@@ -52,11 +56,15 @@ serve(async (req) => {
         <p><strong>Message:</strong></p>
         <p>${message.replace(/\n/g, "<br>")}</p>
         <hr>
+        <p>Please reply directly to this email to respond to the customer.</p>
       `,
     })
 
+    console.log('Company email result:', companyEmailResult)
+
+    console.log('Sending confirmation email to user...')
     // 2. Send confirmation email to the user
-    await resend.emails.send({
+    const userEmailResult = await resend.emails.send({
       from: fromAddress,
       to: [email],
       subject: 'Thank you for contacting VV Metamark!',
@@ -71,16 +79,31 @@ serve(async (req) => {
         <hr>
         <p>Best regards,</p>
         <p>The VV Metamark Team</p>
+        <p>Email: vvmetamark@gmail.com</p>
+        <p>Phone: +91 93449 10110</p>
       `,
     })
 
-    return new Response(JSON.stringify({ message: 'Emails sent successfully!' }), {
+    console.log('User email result:', userEmailResult)
+
+    return new Response(JSON.stringify({ 
+      message: 'Emails sent successfully!',
+      companyEmailId: companyEmailResult.data?.id,
+      userEmailId: userEmailResult.data?.id
+    }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       status: 200,
     })
   } catch (error) {
-    console.error('Error sending email:', error)
-    return new Response(JSON.stringify({ error: error.message }), {
+    console.error('Detailed error sending email:', {
+      message: error.message,
+      stack: error.stack,
+      name: error.name
+    })
+    return new Response(JSON.stringify({ 
+      error: error.message,
+      details: 'Check edge function logs for more information'
+    }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       status: 500,
     })
