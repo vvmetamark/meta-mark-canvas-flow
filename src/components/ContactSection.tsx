@@ -20,7 +20,7 @@ const ContactSection = () => {
         <div className="grid md:grid-cols-2 gap-8">
           <ContactMap
             title="Bangalore Office"
-            src="https://maps.google.com/maps?q=Building%20No.%2022%2C%202nd%20Floor%2C%205th%20Cross%20Road%2C%20N%20S%20Palya%2C%20BTM%202nd%20Stage%2C%20Bengaluru%2C%20Bengaluru%20Urban%2C%20Karnataka%2C%20560076&t=&z=17&ie=UTF8&iwloc=&output=embed"
+            src="https://maps.google.com/maps?q=%2351%202nd%20main%20road%20M%20S%20Nagar%20Post%20old%20Baiyappanahalli%20Banglore%20-%20560033&t=&z=17&ie=UTF8&iwloc=&output=embed"
           />
           <ContactMap
             title="Ambur Office"
