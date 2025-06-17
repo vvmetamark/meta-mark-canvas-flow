@@ -38,7 +38,7 @@ const VideoSection = () => {
                 <DialogContent className="sm:max-w-4xl p-0 bg-transparent border-0">
                   <div className="aspect-video">
                     <iframe
-                      src="https://player.vimeo.com/video/1093364354?autoplay=1&title=0&byline=0&portrait=0"
+                      src="https://player.vimeo.com/video/1094104682?autoplay=1&title=0&byline=0&portrait=0"
                       width="100%"
                       height="100%"
                       allow="autoplay; fullscreen; picture-in-picture"
