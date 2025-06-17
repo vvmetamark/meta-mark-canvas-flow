@@ -3,7 +3,7 @@ import React from 'react';
 
 const clientLogos = [
   "/lovable-uploads/9dc6c40d-1de0-4fef-b3f2-518f309a2a36.png", // The Takshilah Global School
-  "/lovable-uploads/2d8cf4bc-ff6c-4dd2-93a2-ef96cc226045.png", // Two Dots
+  "/lovable-uploads/c28f3bd7-f544-4f0c-b5c0-214405398553.png", // Pixel - R
   "/lovable-uploads/3c550689-0f24-40c2-a7f0-14bbbfd01667.png", // Pixel'R
   "/lovable-uploads/f31f2d3c-36a0-465e-ab27-4ee7e73ece7c.png", // PS Endeavours
   "/lovable-uploads/9c10b3d5-157b-4c31-86fd-6b8c3be866cb.png", // Innovation
