@@ -6,7 +6,7 @@ const clientLogos = [
   "/lovable-uploads/c28f3bd7-f544-4f0c-b5c0-214405398553.png", // Pixel - R
   "/lovable-uploads/3c550689-0f24-40c2-a7f0-14bbbfd01667.png", // Pixel'R
   "/lovable-uploads/f31f2d3c-36a0-465e-ab27-4ee7e73ece7c.png", // PS Endeavours
-  "/lovable-uploads/9c10b3d5-157b-4c31-86fd-6b8c3be866cb.png", // Innovation
+  "/lovable-uploads/c28f3bd7-f544-4f0c-b5c0-214405398553.png", // Pixel - R (replacing Agro Life)
 ];
 
 const ClientLogos = () => {
