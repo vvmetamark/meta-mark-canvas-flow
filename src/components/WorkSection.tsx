@@ -106,7 +106,7 @@ const WorkSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-vv-navy mb-4">
-            OUR <span className="text-vv-orange">WORK</span>
+            OUR <span className="text-vv-orange scratch-wavy">WORK</span>
           </h2>
           <div className="w-24 h-1 bg-vv-orange mx-auto mb-6"></div>
           <p className="text-lg text-vv-navy/70 max-w-2xl mx-auto">
