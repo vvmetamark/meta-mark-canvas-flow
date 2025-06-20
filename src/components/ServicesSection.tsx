@@ -1,4 +1,3 @@
-
 import { Palette, Monitor, Camera } from 'lucide-react';
 import ClientLogos from './ClientLogos';
 
@@ -53,7 +52,14 @@ const ServicesSection = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-vv-navy mb-4">
             WHAT <span style={{ color: '#ffb703' }}>WE DO</span>
           </h2>
-          <div className="w-24 h-1 bg-vv-orange mx-auto mb-6"></div>
+          <div className="flex justify-center mb-6">
+            <img 
+              src="/lovable-uploads/c72beb54-e7f5-44d6-aa5b-ea2c010609bc.png" 
+              alt="Scratch underline" 
+              className="w-24 h-3 object-contain"
+              style={{ filter: 'hue-rotate(30deg) saturate(1.5) brightness(0.8)' }}
+            />
+          </div>
           <p className="text-lg text-vv-navy/70 max-w-2xl mx-auto">
             From concept to execution, we provide comprehensive creative solutions that drive results and build lasting brand relationships.
           </p>

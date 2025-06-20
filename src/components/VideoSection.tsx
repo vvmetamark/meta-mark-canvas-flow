@@ -1,4 +1,3 @@
-
 import { ArrowDown, Play } from 'lucide-react';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 
@@ -97,7 +96,14 @@ const VideoSection = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               <span style={{ color: '#023047' }}>ABOUT</span> <span className="text-vv-orange">VV METAMARK</span>
             </h2>
-            <div className="w-24 h-1 bg-vv-orange mx-auto"></div>
+            <div className="flex justify-center mb-6">
+              <img 
+                src="/lovable-uploads/c72beb54-e7f5-44d6-aa5b-ea2c010609bc.png" 
+                alt="Scratch underline" 
+                className="w-24 h-3 object-contain"
+                style={{ filter: 'hue-rotate(30deg) saturate(1.5) brightness(0.8)' }}
+              />
+            </div>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-start">
