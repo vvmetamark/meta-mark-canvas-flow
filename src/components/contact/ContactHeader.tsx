@@ -13,7 +13,7 @@ const ContactHeader = () => (
       <img 
         src="/lovable-uploads/4cd593ba-a6c9-4a0a-8957-f3f768a75d11.png" 
         alt="Scratch underline" 
-        className="h-2 w-24" 
+        className="h-4 w-32" 
         style={{ filter: 'invert(1) sepia(1) saturate(5) hue-rotate(200deg)' }}
       />
     </div>
