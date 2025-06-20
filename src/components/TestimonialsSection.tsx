@@ -1,4 +1,3 @@
-
 import {
   Carousel,
   CarouselContent,
@@ -83,7 +82,14 @@ const TestimonialsSection = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             WHAT OUR <span className="text-vv-navy">CLIENTS SAY</span>
           </h2>
-          <div className="w-24 h-1 bg-vv-navy mx-auto"></div>
+          <div className="flex justify-center">
+            <img 
+              src="/lovable-uploads/4cd593ba-a6c9-4a0a-8957-f3f768a75d11.png" 
+              alt="Scratch underline" 
+              className="h-2 w-24" 
+              style={{ filter: 'invert(1) sepia(1) saturate(5) hue-rotate(200deg)' }}
+            />
+          </div>
         </div>
 
         <Carousel
