@@ -9,14 +9,7 @@ const ContactHeader = () => (
     <h3 className="text-2xl md:text-3xl font-semibold text-vv-navy mb-8">
       WE'RE RIGHT HERE!
     </h3>
-    <div className="flex justify-center">
-      <img 
-        src="/lovable-uploads/c72beb54-e7f5-44d6-aa5b-ea2c010609bc.png" 
-        alt="Scratch underline" 
-        className="w-24 h-3 object-contain"
-        style={{ filter: 'brightness(0.2) contrast(2)' }}
-      />
-    </div>
+    <div className="w-24 h-1 bg-vv-navy mx-auto"></div>
   </div>
 );
 

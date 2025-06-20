@@ -108,14 +108,7 @@ const WorkSection = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-vv-navy mb-4">
             OUR <span className="text-vv-orange">WORK</span>
           </h2>
-          <div className="flex justify-center mb-6">
-            <img 
-              src="/lovable-uploads/c72beb54-e7f5-44d6-aa5b-ea2c010609bc.png" 
-              alt="Scratch underline" 
-              className="w-24 h-3 object-contain"
-              style={{ filter: 'hue-rotate(30deg) saturate(1.5) brightness(0.8)' }}
-            />
-          </div>
+          <div className="w-24 h-1 bg-vv-orange mx-auto mb-6"></div>
           <p className="text-lg text-vv-navy/70 max-w-2xl mx-auto">
             Explore our portfolio of creative projects and see how we've helped brands tell their stories.
           </p>
