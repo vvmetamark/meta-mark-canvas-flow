@@ -57,7 +57,7 @@ const ServicesSection = () => {
             <img 
               src="/lovable-uploads/4cd593ba-a6c9-4a0a-8957-f3f768a75d11.png" 
               alt="Scratch underline" 
-              className="h-4 w-32" 
+              className="h-6 w-40" 
               style={{ filter: 'hue-rotate(25deg) saturate(1.5) brightness(0.8)' }}
             />
           </div>
